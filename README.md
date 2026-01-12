@@ -2,6 +2,10 @@
 
 A lightweight Windows application for downloading and running tools from a central web server.
 
+<p align="center">
+<img width="480" height="377" alt="Screenshot1" src="https://github.com/user-attachments/assets/f1fd9a86-a6bb-44dd-8619-6ae211001690" />
+</p>
+
 ## Features
 
 - **Download and run** - Downloads the selected tool from your web server and runs it automatically
