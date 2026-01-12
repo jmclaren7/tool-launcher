@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>ToolLauncher</AssemblyName>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <OutputPath>.\</OutputPath>
+    <BaseIntermediateOutputPath>$(TEMP)\ToolLauncher_obj\</BaseIntermediateOutputPath>
+    <Optimize>true</Optimize>
+    <AllowedReferenceRelatedFileExtensions>.none</AllowedReferenceRelatedFileExtensions>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System"><Private>false</Private></Reference>
+    <Reference Include="System.Drawing"><Private>false</Private></Reference>
+    <Reference Include="System.Windows.Forms"><Private>false</Private></Reference>
+    <Reference Include="System.Runtime.Serialization"><Private>false</Private></Reference>
+    <Reference Include="System.IO.Compression"><Private>false</Private></Reference>
+    <Reference Include="System.IO.Compression.FileSystem"><Private>false</Private></Reference>
+    <Reference Include="System.Xml"><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ToolLauncher.cs" />
+    <Compile Include="AppConfig.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
