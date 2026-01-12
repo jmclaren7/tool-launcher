@@ -11,35 +11,29 @@ A lightweight Windows application for downloading and running tools from a centr
 - **Download progress** - Shows download progress so you know large tools are actually downloading
 - **App packages** - Zip multiple files together into a .scapp file - extracts automatically (Same technique as the ScreenConnect toolbox)
 - **Key authentication** - Configure a key so tools are not publicly downloadable without the program
-- **Wide compatibility** - Uses .NET Framework 4.7, available on Windows 8.1 and later by default
-
-## Requirements
-
-### Client
-- Windows with .NET Framework 4.7
-
-### Server
-- PHP 8.2 or later
-- GD extension (for icon extraction)
+- **Wide compatibility** - Uses .NET Framework 4.7, available by default since  Windows 10 v1703 and often available on older Windows versions
 
 ## Setup
 
 ### Server Setup
 
+Requirements: PHP 8.2 or later, GD extension (for icon extraction)
+
 1. Upload `index.php` to your web server
-2. Create a `data` folder in the same directory and upload your tools to it
-   - Recommended: Block direct download access to files using the preferred method on your web server. Most web servers will not allow access to "dot" files, you could change the folder name to ".data"
-   - Update the path in index.php if it differs
-3. Place your tools (executables, scripts, etc.) in the `data` folder
+2. Create a `data` folder in the same directory as `index.php`
+   - Recommended: Block direct access to `data` using the preferred method on your web server
+   - Update the path in index.php if not using `data`
+3. Upload your tools (executables, scripts, etc.) in the `data` folder and subfolders
 4. Edit `index.php` and set your own `$validKey` value
 5. Optionally set `$enableDebug = true` for troubleshooting
 
-### Client Setup
+### Client Setup / Build
+
+Requirements: Windows with .NET 4.7 Framework or SDK
 
 1. Rename AppConfig.example.cs to AppConfig.cs and configure it's values (ApiUrl, ApiKey, Title)
 2. Build the application using `build.bat`
 3. Run `ToolLauncher.exe`
-   - Optional: Use your server URL as a parameter
 
 ## Supported File Types
 
@@ -49,18 +43,10 @@ A lightweight Windows application for downloading and running tools from a centr
 | .msi | Installs with msiexec (not silent) |
 | .ps1 | Run with PowerShell (bypass execution policy) |
 | .bat, .cmd | Run with cmd.exe |
-| .scapp | Extract and run `_a.bat` or `a.bat` |
+| .scapp, .app.zip | Extract zip and run the first `.bat` found (e.g. `a.bat`) |
 | Other | Open with default program |
 
-## Building
-
-Run `build.bat` to compile the application. Requires .NET Framework 4.7 SDK or the build tools included with Windows.
-
-```batch
-build.bat
-```
-
-## TODO List
+## To Do
 
 ### Security
 
