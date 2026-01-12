@@ -155,7 +155,7 @@ public class MainForm : Form
             TreeViewNodeSorter = new NodeSorter(),
             ImageList = imageList
         };
-        treeView.Font = new Font(treeView.Font.FontFamily, treeView.Font.Size + 2);
+        treeView.Font = new Font(treeView.Font.FontFamily, treeView.Font.Size + AppConfig.FontSizeIncrease);
         treeView.NodeMouseClick += TreeView_NodeMouseClick;
         treeView.NodeMouseDoubleClick += TreeView_NodeMouseDoubleClick;
 
